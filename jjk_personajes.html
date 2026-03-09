@@ -11,14 +11,12 @@ body{background:#080810;font-family:Georgia,serif;min-height:100vh;padding:22px 
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 20%,rgba(120,0,0,.2) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(0,0,100,.12) 0%,transparent 50%);pointer-events:none;z-index:0}
 .container{position:relative;z-index:1;max-width:1000px;margin:0 auto}
 
-/* HEADER */
 .header{text-align:center;margin-bottom:22px}
 .kanji{font-size:.78rem;color:#c0392b;letter-spacing:.35em;margin-bottom:7px;font-family:monospace}
 h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.3rem,5.5vw,2.5rem);color:#fff;text-shadow:0 0 40px rgba(200,0,0,.5);letter-spacing:.04em}
 .subtitle{color:rgba(255,255,255,.28);font-size:.68rem;margin-top:5px;letter-spacing:.2em;font-family:monospace}
 .divider{width:80px;height:2px;background:linear-gradient(90deg,transparent,#c0392b,transparent);margin:10px auto 0}
 
-/* CONTROLS */
 .controls{display:flex;flex-direction:column;gap:9px;margin-bottom:14px}
 .search-wrap{position:relative}
 #searchInput{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;padding:9px 16px 9px 36px;border-radius:30px;font-size:.78rem;font-family:monospace;outline:none;transition:border-color .2s}
@@ -31,38 +29,33 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.3rem,5.5vw,2.5rem);co
 
 #countLabel{text-align:center;font-size:.6rem;color:rgba(255,255,255,.18);font-family:monospace;margin-bottom:12px}
 
-/* LEGEND */
 .legend{display:flex;justify-content:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
 .legend-item{display:flex;align-items:center;gap:5px;font-size:.64rem;color:rgba(255,255,255,.4)}
 .ldot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 
-/* GRID */
-#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:9px}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
 
-/* CARD */
 .card{border-radius:13px;cursor:pointer;border:2px solid rgba(255,255,255,.07);position:relative;overflow:hidden;display:flex;flex-direction:column;aspect-ratio:2/3;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,opacity .22s ease;-webkit-tap-highlight-color:transparent;user-select:none;background:#0f0f1e}
 .card.selected{transform:scale(1.05);border-color:#f0c040;box-shadow:0 0 22px rgba(240,192,64,.5)}
-.card.related{transform:scale(1.02);border-color:rgba(240,192,64,.4);box-shadow:0 0 10px rgba(240,192,64,.2)}
 .card.dimmed{opacity:.3}
 
 .card-img{flex:1;overflow:hidden;position:relative}
 .card-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .3s ease}
 .card:hover .card-img img{transform:scale(1.07)}
-.placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.6rem}
+.placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.8rem}
 
 .card-overlay{position:absolute;bottom:0;left:0;right:0;height:58%;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,transparent 100%);pointer-events:none}
-.card-footer{padding:6px 6px 8px;position:relative;z-index:2}
-.card-name{font-family:'Cinzel',serif;font-size:.58rem;font-weight:700;color:#fff;text-align:center;line-height:1.3;margin-bottom:3px;text-shadow:0 1px 3px rgba(0,0,0,.9)}
-.card-role{font-size:.5rem;color:rgba(255,255,255,.55);background:rgba(0,0,0,.48);border-radius:20px;padding:1px 6px;text-align:center;font-family:monospace;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-footer{padding:6px 6px 9px;position:relative;z-index:2}
+.card-name{font-family:'Cinzel',serif;font-size:.6rem;font-weight:700;color:#fff;text-align:center;line-height:1.3;margin-bottom:3px;text-shadow:0 1px 3px rgba(0,0,0,.9)}
+.card-role{font-size:.52rem;color:rgba(255,255,255,.55);background:rgba(0,0,0,.48);border-radius:20px;padding:1px 6px;text-align:center;font-family:monospace;display:block}
 .card-dot{position:absolute;top:7px;right:7px;width:8px;height:8px;border-radius:50%;z-index:3}
 
-/* DETAIL */
 .detail{margin-top:22px;background:rgba(8,8,18,.97);border:1px solid rgba(240,192,64,.22);border-radius:17px;padding:18px;position:relative;box-shadow:0 0 40px rgba(0,0,0,.6);display:none;animation:fadeIn .2s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .detail.visible{display:block}
 .detail-bar{position:absolute;top:0;left:0;right:0;height:3px;border-radius:17px 17px 0 0}
 .detail-inner{display:flex;gap:15px;align-items:flex-start;flex-wrap:wrap}
-.detail-img{width:82px;height:115px;border-radius:10px;overflow:hidden;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.7)}
+.detail-img{width:85px;height:118px;border-radius:10px;overflow:hidden;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.7)}
 .detail-img img{width:100%;height:100%;object-fit:cover;object-position:top}
 .detail-body{flex:1;min-width:160px}
 .detail-name{font-family:'Cinzel',serif;color:#f0c040;font-size:1.05rem;margin-bottom:2px}
@@ -73,8 +66,7 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.3rem,5.5vw,2.5rem);co
 .badge.gold{background:rgba(240,192,64,.12);border-color:rgba(240,192,64,.25);color:#f0c040}
 .badge.red{background:rgba(192,57,43,.15);border-color:rgba(192,57,43,.3);color:#e67e72}
 .close-btn{position:absolute;top:11px;right:11px;background:rgba(255,255,255,.07);border:none;color:#888;width:25px;height:25px;border-radius:50%;cursor:pointer;font-size:.72rem;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
-
-.no-results{text-align:center;padding:40px;color:rgba(255,255,255,.22);font-family:monospace;font-size:.78rem}
+.no-results{text-align:center;padding:40px;color:rgba(255,255,255,.22);font-family:monospace;font-size:.78rem;grid-column:1/-1}
 .hint{text-align:center;margin-top:22px;font-size:.58rem;color:rgba(255,255,255,.12);font-family:monospace}
 </style>
 </head>
@@ -95,7 +87,6 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.3rem,5.5vw,2.5rem);co
     <div class="filters">
       <button class="filter-btn active" data-f="all">✦ TODOS</button>
       <button class="filter-btn" data-f="tokyo">🏫 TOKYO</button>
-      <button class="filter-btn" data-f="kyoto">🎓 KYOTO</button>
       <button class="filter-btn" data-f="curse">👹 MALDICIONES</button>
       <button class="filter-btn" data-f="villain">⚔️ VILLANOS</button>
       <button class="filter-btn" data-f="other">👤 OTROS</button>
@@ -104,10 +95,9 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.3rem,5.5vw,2.5rem);co
 
   <div class="legend">
     <div class="legend-item"><div class="ldot" style="background:#e8b84b"></div>Tokyo</div>
-    <div class="legend-item"><div class="ldot" style="background:#5b9bd5"></div>Kyoto</div>
     <div class="legend-item"><div class="ldot" style="background:#c0392b"></div>Maldición</div>
     <div class="legend-item"><div class="ldot" style="background:#8e44ad"></div>Villano</div>
-    <div class="legend-item"><div class="ldot" style="background:#555"></div>Otro</div>
+    <div class="legend-item"><div class="ldot" style="background:#666"></div>Otro</div>
   </div>
 
   <div id="countLabel"></div>
@@ -127,205 +117,41 @@ h1{font-family:'Cinzel Decorative',serif;font-size:clamp(1.3rem,5.5vw,2.5rem);co
     </div>
   </div>
 
-  <div class="hint">Toca un personaje para ver sus detalles · Las imágenes requieren WiFi</div>
+  <div class="hint">Toca un personaje para ver sus detalles</div>
 </div>
 
 <script>
-// img: MyAnimeList CDN — open, no CORS issues when loaded from browser
+const BASE = "https://leanarari.github.io/jjk-personajes/";
+
 const C = [
-  // ── TOKYO JUJUTSU HIGH ──────────────────────────────────────────────
-  { id:1,  name:"Yuji Itadori",      jp:"虎杖 悠仁",    faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#6a0a0a,#2a0540)",
-    grade:"Grado Especial", technique:"Divergent Fist / Black Flash", affil:"Tokyo Jujutsu High (1er año)",
-    desc:"Protagonista. Vessel de Sukuna tras devorar su dedo. Fuerza física extraordinaria y voluntad inquebrantable.",
-    img:"https://cdn.myanimelist.net/images/characters/10/511991.jpg" },
-  { id:2,  name:"Megumi Fushiguro",  jp:"伏黒 恵",      faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#0a1a3a,#040e1e)",
-    grade:"Semi-Especial", technique:"Ten Shadows Technique", affil:"Tokyo Jujutsu High (1er año)",
-    desc:"Invocador del clan Zenin. Controla sombras para invocar shikigami. Potencial ilimitado según Gojo.",
-    img:"https://cdn.myanimelist.net/images/characters/7/511989.jpg" },
-  { id:3,  name:"Nobara Kugisaki",   jp:"釘崎 野薔薇",  faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#5a1200,#2a0800)",
-    grade:"Grado 3", technique:"Straw Doll Technique", affil:"Tokyo Jujutsu High (1er año)",
-    desc:"Hechicera de campo oriunda de Aomori. Usa mazo y clavos impregnados de energía maldita.",
-    img:"https://cdn.myanimelist.net/images/characters/14/511990.jpg" },
-  { id:4,  name:"Satoru Gojo",       jp:"五条 悟",      faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#1a0535,#080015)",
-    grade:"Grado Especial", technique:"Infinity / Six Eyes", affil:"Tokyo Jujutsu High (Profesor)",
-    desc:"El hechicero más poderoso del mundo moderno. Domina el Infinito y posee los Six Eyes, otorgados una vez cada siglo.",
-    img:"https://cdn.myanimelist.net/images/characters/15/522257.jpg" },
-  { id:5,  name:"Kento Nanami",      jp:"七海 建人",    faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#3a2a00,#1a1200)",
-    grade:"Grado 1", technique:"Ratio Technique", affil:"Tokyo Jujutsu High (Hechicero)",
-    desc:"Ex empleado de oficina reconvertido en hechicero de grado 1. Usa la técnica de proporción para identificar puntos débiles.",
-    img:"https://cdn.myanimelist.net/images/characters/2/522258.jpg" },
-  { id:6,  name:"Toge Inumaki",      jp:"狗巻 棘",      faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#003a2a,#001810)",
-    grade:"Semi-Especial", technique:"Cursed Speech", affil:"Tokyo Jujutsu High (2do año)",
-    desc:"Descendiente del clan Inumaki. Su habla maldita obliga al oyente a obedecer. Se comunica solo con ingredientes de onigiri para no maldecir accidentalmente.",
-    img:"https://cdn.myanimelist.net/images/characters/10/522261.jpg" },
-  { id:7,  name:"Panda",             jp:"パンダ",       faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#1a1a1a,#0a0a0a)",
-    grade:"Semi-Especial", technique:"Blowup / Gorilla Mode", affil:"Tokyo Jujutsu High (2do año)",
-    desc:"Construcción maldita creada por Yaga. Parece un oso panda normal pero posee tres núcleos y puede cambiar de forma de combate.",
-    img:"https://cdn.myanimelist.net/images/characters/5/522262.jpg" },
-  { id:8,  name:"Maki Zenin",        jp:"禪院 真希",    faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#3a1500,#1a0900)",
-    grade:"Grado 4 → Especial", technique:"Heavenly Restriction (sin energía maldita)", affil:"Tokyo Jujutsu High (2do año)",
-    desc:"Del clan Zenin, nació sin energía maldita por la Heavenly Restriction. Compensa con fuerza sobrehumana y maestría con armas.",
-    img:"https://cdn.myanimelist.net/images/characters/3/522260.jpg" },
-  { id:9,  name:"Yuta Okkotsu",      jp:"乙骨 憂太",   faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#001a40,#000d20)",
-    grade:"Grado Especial", technique:"Copy / Rika", affil:"Tokyo Jujutsu High (2do año / Jujutsu 0)",
-    desc:"Protagonista de Jujutsu Kaisen 0. Posee la mayor reserva de energía maldita conocida. Puede copiar técnicas de otros.",
-    img:"https://cdn.myanimelist.net/images/characters/16/468464.jpg" },
-  { id:10, name:"Takuma Ino",        jp:"猪野 琢真",   faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#0a2a2a,#051515)",
-    grade:"Grado 2", technique:"Auspicious Beasts Summon", affil:"Tokyo Jujutsu High",
-    desc:"Asistente de Nanami y hechicero de grado 2. Puede invocar tres bestias auspiciosas: Byakko, Kirin y Seiryuu.",
-    img:"https://cdn.myanimelist.net/images/characters/13/522265.jpg" },
-  { id:11, name:"Shoko Ieiri",       jp:"ieiri 硝子",  faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#2a001a,#150010)",
-    grade:"Grado 1", technique:"Reverse Cursed Technique", affil:"Tokyo Jujutsu High (Médica)",
-    desc:"Médica de Tokyo Jujutsu High. Ex compañera de clase de Gojo y Geto. Domina la técnica inversa para curar heridas.",
-    img:"https://cdn.myanimelist.net/images/characters/11/522266.jpg" },
-  { id:12, name:"Masamichi Yaga",    jp:"夜蛾 正道",   faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#1a0a00,#0d0500)",
-    grade:"Grado 1", technique:"Cursed Corpse", affil:"Tokyo Jujutsu High (Director)",
-    desc:"Director de Tokyo Jujutsu High y maestro de los 2dos años. Crea construcciones malditas, incluyendo a Panda.",
-    img:"https://cdn.myanimelist.net/images/characters/6/522267.jpg" },
-  { id:13, name:"Akari Nitta",       jp:"新田 明里",   faction:"tokyo",  dot:"#e8b84b", bg:"linear-gradient(150deg,#0a1a0a,#050d05)",
-    grade:"No-hechicera", technique:"Ninguna", affil:"Tokyo Jujutsu High (Auxiliar)",
-    desc:"Gestora auxiliar de Tokyo Jujutsu High y hermana mayor de Arata Nitta. Apoya a los hechiceros en misiones.",
-    img:"https://cdn.myanimelist.net/images/characters/8/522268.jpg" },
+  // CON IMAGEN
+  { id:1,  name:"Yuji Itadori",     jp:"虎杖 悠仁",   faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#6a0a0a,#2a0540)",  img:"yuji.jpg",     grade:"Grado Especial",        technique:"Divergent Fist / Black Flash",          affil:"Tokyo Jujutsu High (1er año)",      desc:"Protagonista. Vessel de Sukuna tras devorar su dedo. Fuerza física extraordinaria y voluntad inquebrantable." },
+  { id:2,  name:"Megumi Fushiguro", jp:"伏黒 恵",      faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#0a1a3a,#040e1e)",  img:"megumi.jpg",   grade:"Semi-Especial",         technique:"Ten Shadows Technique",                affil:"Tokyo Jujutsu High (1er año)",      desc:"Invocador del clan Zenin. Controla sombras para invocar shikigami. Potencial ilimitado según Gojo." },
+  { id:3,  name:"Nobara Kugisaki",  jp:"釘崎 野薔薇", faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#5a1200,#2a0800)",  img:"kugisaki.jpg", grade:"Grado 3",               technique:"Straw Doll Technique",                 affil:"Tokyo Jujutsu High (1er año)",      desc:"Hechicera de campo oriunda de Aomori. Usa mazo y clavos impregnados de energía maldita." },
+  { id:4,  name:"Satoru Gojo",      jp:"五条 悟",      faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#1a0535,#080015)",  img:"satoru.jpg",   grade:"Grado Especial",        technique:"Infinity / Six Eyes",                  affil:"Tokyo Jujutsu High (Profesor)",     desc:"El hechicero más poderoso del mundo moderno. Domina el Infinito y posee los Six Eyes, otorgados una vez cada siglo." },
+  { id:5,  name:"Maki Zenin",       jp:"禪院 真希",   faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#3a1500,#1a0900)",  img:"maki.jpg",     grade:"Grado 4 → Especial",    technique:"Heavenly Restriction",                 affil:"Tokyo Jujutsu High (2do año)",      desc:"Del clan Zenin, nació sin energía maldita. Compensa con fuerza sobrehumana y maestría con armas." },
+  { id:6,  name:"Toge Inumaki",     jp:"狗巻 棘",      faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#003a2a,#001810)",  img:"inumaki.jpg",  grade:"Semi-Especial",         technique:"Cursed Speech",                        affil:"Tokyo Jujutsu High (2do año)",      desc:"Descendiente del clan Inumaki. Su habla maldita obliga al oyente a obedecer. Se comunica solo con ingredientes de onigiri." },
+  { id:7,  name:"Yuta Okkotsu",     jp:"乙骨 憂太",  faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#001a40,#000d20)",  img:"okkotsu.jpg",  grade:"Grado Especial",        technique:"Copy / Rika",                          affil:"Tokyo Jujutsu High (2do año)",      desc:"Protagonista de Jujutsu Kaisen 0. Posee la mayor reserva de energía maldita conocida. Puede copiar técnicas de otros." },
+  { id:8,  name:"Ryomen Sukuna",    jp:"両面 宿儺",  faction:"curse",   dot:"#c0392b", bg:"linear-gradient(150deg,#4a0000,#200000)",  img:"sukuna.jpg",   grade:"Rey de Maldiciones",    technique:"Dismantle / Cleave / Shrine / Open",   affil:"Independiente",                     desc:"El Rey de las Maldiciones del mundo antiguo. Reside en sus 20 dedos. La entidad más poderosa de la serie." },
+  { id:9,  name:"Suguru Geto",      jp:"夏油 傑",      faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#001a00,#000d00)",  img:"geto.jpg",     grade:"Grado Especial",        technique:"Cursed Spirit Manipulation",           affil:"Terrorista maldito",                desc:"Ex hechicero, antiguo mejor amigo de Gojo. Decidió exterminar a los no-hechiceros. Su cuerpo fue luego tomado por Kenjaku." },
 
-  // ── KYOTO JUJUTSU HIGH ──────────────────────────────────────────────
-  { id:14, name:"Aoi Todo",          jp:"東堂 葵",      faction:"kyoto",  dot:"#5b9bd5", bg:"linear-gradient(150deg,#2a1000,#150800)",
-    grade:"Grado 1", technique:"Boogie Woogie", affil:"Kyoto Jujutsu High (3er año)",
-    desc:"El hechicero más fuerte de Kyoto. Obsesionado con Jennifer Lawrence. Su Boogie Woogie intercambia posiciones tocando las palmas.",
-    img:"https://cdn.myanimelist.net/images/characters/4/522270.jpg" },
-  { id:15, name:"Mai Zenin",         jp:"禪院 真依",   faction:"kyoto",  dot:"#5b9bd5", bg:"linear-gradient(150deg,#2a001a,#150010)",
-    grade:"Grado 3", technique:"Construction", affil:"Kyoto Jujutsu High (3er año)",
-    desc:"Hermana gemela de Maki. A diferencia de ella, Mai tiene energía maldita pero la odia. Usa una pistola imbuidoa de energía.",
-    img:"https://cdn.myanimelist.net/images/characters/11/522271.jpg" },
-  { id:16, name:"Kasumi Miwa",       jp:"三輪 霞",     faction:"kyoto",  dot:"#5b9bd5", bg:"linear-gradient(150deg,#001540,#000a20)",
-    grade:"Grado 3", technique:"New Shadow Style: Simple Domain", affil:"Kyoto Jujutsu High (3er año)",
-    desc:"Hechicera de Kyoto de familia pobre que busca ganar dinero. Usa el estilo Simple Domain con una katana.",
-    img:"https://cdn.myanimelist.net/images/characters/10/522272.jpg" },
-  { id:17, name:"Noritoshi Kamo",    jp:"加茂 憲紀",  faction:"kyoto",  dot:"#5b9bd5", bg:"linear-gradient(150deg,#1a0000,#0d0000)",
-    grade:"Semi-Especial", technique:"Blood Manipulation", affil:"Kyoto Jujutsu High (3er año)",
-    desc:"Heredero del clan Kamo. Su técnica de manipulación sanguínea le permite controlar su propia sangre como arma.",
-    img:"https://cdn.myanimelist.net/images/characters/7/522273.jpg" },
-  { id:18, name:"Yoshinobu Gakuganji", jp:"学漢字 善信", faction:"kyoto", dot:"#5b9bd5", bg:"linear-gradient(150deg,#101010,#060606)",
-    grade:"Grado Especial", technique:"Cursed Tool: Electric Guitar", affil:"Kyoto Jujutsu High (Director)",
-    desc:"Director de Kyoto Jujutsu High y hechicero de grado especial. Usa su guitarra eléctrica para emitir energía maldita como sonido.",
-    img:"https://cdn.myanimelist.net/images/characters/9/522274.jpg" },
-  { id:19, name:"Mechamaru",         jp:"与幸吉/メカ丸", faction:"kyoto", dot:"#5b9bd5", bg:"linear-gradient(150deg,#0a0a2a,#050514)",
-    grade:"Semi-Especial", technique:"Ultimate Mechamaru", affil:"Kyoto Jujutsu High (2do año)",
-    desc:"Kouichi Muta, confinado en cama por la Heavenly Restriction. Opera un robot de combate a larga distancia.",
-    img:"https://cdn.myanimelist.net/images/characters/3/522275.jpg" },
-
-  // ── MALDICIONES (Cursed Spirits) ────────────────────────────────────
-  { id:20, name:"Ryomen Sukuna",     jp:"両面 宿儺",   faction:"curse",  dot:"#c0392b", bg:"linear-gradient(150deg,#4a0000,#200000)",
-    grade:"Rey de Maldiciones", technique:"Dismantle / Cleave / Shrine / Open", affil:"Independiente",
-    desc:"El Rey de las Maldiciones del mundo antiguo. Reside en sus 20 dedos. La entidad más poderosa de la serie.",
-    img:"https://cdn.myanimelist.net/images/characters/9/511988.jpg" },
-  { id:21, name:"Mahito",            jp:"真人",        faction:"curse",  dot:"#c0392b", bg:"linear-gradient(150deg,#1a0030,#0a0018)",
-    grade:"Especial (no registrado)", technique:"Idle Transfiguration", affil:"Pseudo-Geto",
-    desc:"Maldición que encarna el odio humano hacia sus semejantes. Manipula el alma para transmutar cuerpos.",
-    img:"https://cdn.myanimelist.net/images/characters/4/522254.jpg" },
-  { id:22, name:"Jogo",              jp:"漏瑚",        faction:"curse",  dot:"#c0392b", bg:"linear-gradient(150deg,#4a1500,#200a00)",
-    grade:"Semi-Especial", technique:"Disaster Flames", affil:"Pseudo-Geto",
-    desc:"Maldición volcánica. Considera a los humanos los seres anormales. Anhela que las maldiciones dominen el mundo.",
-    img:"https://cdn.myanimelist.net/images/characters/11/522255.jpg" },
-  { id:23, name:"Hanami",            jp:"花御",        faction:"curse",  dot:"#c0392b", bg:"linear-gradient(150deg,#003a00,#001800)",
-    grade:"Semi-Especial", technique:"Disaster Plants", affil:"Pseudo-Geto",
-    desc:"Maldición que encarna el miedo humano a la naturaleza. Crea ramas y plantas de energía maldita.",
-    img:"https://cdn.myanimelist.net/images/characters/12/522256.jpg" },
-  { id:24, name:"Dagon",             jp:"陀艮",        faction:"curse",  dot:"#c0392b", bg:"linear-gradient(150deg,#00203a,#001020)",
-    grade:"Especial", technique:"Disaster Tides", affil:"Pseudo-Geto",
-    desc:"Maldición acuática aliada de Jogo y Hanami. Puede abrir un Dominio Expandido lleno de shikigami marinos.",
-    img:"https://cdn.myanimelist.net/images/characters/14/522276.jpg" },
-  { id:25, name:"Rika Orimoto",      jp:"折本 里香",  faction:"curse",  dot:"#c0392b", bg:"linear-gradient(150deg,#2a002a,#150015)",
-    grade:"Especial", technique:"Rika (Espíritu vengativo)", affil:"Yuta Okkotsu",
-    desc:"La reina de las maldiciones. Espíritu vengativo de la amiga de infancia de Yuta. Fuente de su enorme poder.",
-    img:"https://cdn.myanimelist.net/images/characters/9/468465.jpg" },
-
-  // ── VILLANOS / ANTAGONISTAS ─────────────────────────────────────────
-  { id:26, name:"Suguru Geto",       jp:"夏油 傑",     faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#001a00,#000d00)",
-    grade:"Grado Especial", technique:"Cursed Spirit Manipulation / Maximum: Uzumaki", affil:"Terrorista maldito",
-    desc:"Ex hechicero, antiguo mejor amigo de Gojo. Decidió exterminar a los no-hechiceros. Su cuerpo fue luego tomado por Kenjaku.",
-    img:"https://cdn.myanimelist.net/images/characters/7/522253.jpg" },
-  { id:27, name:"Kenjaku",           jp:"羂索",        faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#001500,#000a00)",
-    grade:"Grado Especial", technique:"Antigravity System / Body Possession", affil:"Independiente",
-    desc:"Hechicero anciano que sobrevive tomando posesión de cuerpos. Orquesta el Culling Game. Actualmente habita el cuerpo de Geto.",
-    img:"https://cdn.myanimelist.net/images/characters/14/522277.jpg" },
-  { id:28, name:"Toji Fushiguro",    jp:"伏黒 甚爾",  faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#0a0a0a,#050505)",
-    grade:"Ex-Grado Especial", technique:"Heavenly Restriction (sin energía maldita)", affil:"Asesino a sueldo",
-    desc:"El Asesino de Hechiceros. Padre de Megumi. Heavenly Restriction le eliminó la energía maldita a cambio de capacidades físicas sobrehumanas.",
-    img:"https://cdn.myanimelist.net/images/characters/16/522278.jpg" },
-  { id:29, name:"Uraume",            jp:"裏梅",        faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#001535,#000a1a)",
-    grade:"Semi-Especial", technique:"Ice Formation", affil:"Sukuna",
-    desc:"Leal seguidor de Sukuna desde la antigüedad. Puede congelar y destruir múltiples objetivos simultáneamente.",
-    img:"https://cdn.myanimelist.net/images/characters/3/522279.jpg" },
-  { id:30, name:"Naoya Zenin",       jp:"禪院 直哉",  faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#2a1800,#150c00)",
-    grade:"Semi-Especial", technique:"Projection Sorcery", affil:"Clan Zenin",
-    desc:"Miembro elitista del clan Zenin. Su técnica de proyección permite desplazarse a velocidad de 24 fotogramas.",
-    img:"https://cdn.myanimelist.net/images/characters/10/522280.jpg" },
-  { id:31, name:"Haruta Shigemo",    jp:"重面 春太",  faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#1a1a00,#0d0d00)",
-    grade:"Grado 2", technique:"Miracles", affil:"Pseudo-Geto",
-    desc:"Hechicero corrupto del bando de Geto. Su técnica de milagros acumula buena suerte para momentos críticos.",
-    img:"https://cdn.myanimelist.net/images/characters/13/522281.jpg" },
-
-  // ── CULLING GAME / OTRAS FACCIONES ──────────────────────────────────
-  { id:32, name:"Hiromi Higuruma",   jp:"日車 寛見",  faction:"other",   dot:"#777", bg:"linear-gradient(150deg,#050520,#020210)",
-    grade:"Grado Especial", technique:"Juristic Scale (Domain: Deadly Sentencing)", affil:"Culling Game",
-    desc:"Ex abogado convertido en hechicero. Su dominio Deadly Sentencing juzga al oponente y puede confiscar su técnica.",
-    img:"https://cdn.myanimelist.net/images/characters/5/522282.jpg" },
-  { id:33, name:"Kinji Hakari",      jp:"秤 金次",    faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#2a1a00,#150d00)",
-    grade:"Grado 1", technique:"Idle Death Gamble", affil:"Tokyo Jujutsu High (3er año / suspendido)",
-    desc:"Estudiante suspendido de Tokyo. Su técnica es una ruleta maldita; si saca el jackpot, obtiene energía maldita ilimitada por 4 minutos.",
-    img:"https://cdn.myanimelist.net/images/characters/6/522283.jpg" },
-  { id:34, name:"Takako Uro",        jp:"宇露 鷹子",  faction:"other",   dot:"#777", bg:"linear-gradient(150deg,#1a001a,#0d000d)",
-    grade:"Especial", technique:"Sky Manipulation", affil:"Culling Game",
-    desc:"Hechicera reencarnada de hace 1000 años. Capitana del escuadrón Sun, Moon & Stars. Puede manipular el cielo y crear espacios distorsionados.",
-    img:"https://cdn.myanimelist.net/images/characters/15/522284.jpg" },
-  { id:35, name:"Hajime Kashimo",    jp:"鹿紫雲 一",  faction:"other",   dot:"#777", bg:"linear-gradient(150deg,#1a1a00,#0d0d00)",
-    grade:"Especial", technique:"Genju Kashimo", affil:"Culling Game",
-    desc:"Hechicero legendario reencarnado que vivió hace 400 años. Participó en el Culling Game para encontrar a Sukuna.",
-    img:"https://cdn.myanimelist.net/images/characters/9/522285.jpg" },
-  { id:36, name:"Yorozu",            jp:"萬",          faction:"other",   dot:"#777", bg:"linear-gradient(150deg,#15001a,#0a000d)",
-    grade:"Especial", technique:"Construction", affil:"Culling Game",
-    desc:"Hechicera reencarnada obsesionada con Sukuna. Su técnica de construcción le permite crear cualquier objeto con energía maldita.",
-    img:"https://cdn.myanimelist.net/images/characters/4/522286.jpg" },
-  { id:37, name:"Fumihiko Takaba",   jp:"鷹比呂 文彦", faction:"other",  dot:"#777", bg:"linear-gradient(150deg,#001a1a,#000d0d)",
-    grade:"Especial", technique:"Comedian", affil:"Culling Game",
-    desc:"Comediante aspirante forzado a participar en el Culling Game. Su técnica hace realidad todo lo que cree que es gracioso.",
-    img:"https://cdn.myanimelist.net/images/characters/7/522287.jpg" },
-  { id:38, name:"Choso",             jp:"脹相",        faction:"other",   dot:"#777", bg:"linear-gradient(150deg,#3a0000,#1a0000)",
-    grade:"Semi-Especial", technique:"Blood Manipulation (Piercing Blood / Supernova)", affil:"Yuji (hermano)",
-    desc:"Semi-maldición, mitad humano mitad espíritu maldito. Hermano mayor de Yuji. Domina la manipulación de sangre con precisión letal.",
-    img:"https://cdn.myanimelist.net/images/characters/6/522288.jpg" },
-  { id:39, name:"Mei Mei",           jp:"七海 芽々",  faction:"other",   dot:"#777", bg:"linear-gradient(150deg,#05050a,#020205)",
-    grade:"Grado 1", technique:"Black Bird Manipulation", affil:"Independiente (ex Tokyo)",
-    desc:"Hechicera independiente y veterana. Trabaja por dinero. Puede controlar cuervos usando energía maldita.",
-    img:"https://cdn.myanimelist.net/images/characters/16/522289.jpg" },
-  { id:40, name:"Arata Nitta",       jp:"新田 新太",  faction:"other",   dot:"#777", bg:"linear-gradient(150deg,#0a1a0a,#050d05)",
-    grade:"No-hechicero", technique:"Ninguna", affil:"Tokyo Jujutsu High (Auxiliar)",
-    desc:"Gestor auxiliar de Tokyo Jujutsu High y hermano menor de Akari Nitta. Apoya en misiones sin capacidades de combate.",
-    img:"https://cdn.myanimelist.net/images/characters/8/522290.jpg" },
-  { id:41, name:"Riko Amanai",       jp:"天内 理子",  faction:"other",   dot:"#777", bg:"linear-gradient(150deg,#1a0010,#0d0008)",
-    grade:"Vessel de Star Plasma", technique:"Ninguna", affil:"Master Tengen",
-    desc:"La vasija del plasma estelar designada para fusionarse con Master Tengen en 2006. Arco Hidden Inventory.",
-    img:"https://cdn.myanimelist.net/images/characters/15/522291.jpg" },
-  { id:42, name:"Haibara Yu",        jp:"灰原 雄",    faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#001a2a,#000d15)",
-    grade:"Grado 2", technique:"Desconocida", affil:"Tokyo Jujutsu High (1er año - pasado)",
-    desc:"Compañero de clase de Nanami. Murió en misión un año antes de los eventos principales, motivando a Nanami.",
-    img:"https://cdn.myanimelist.net/images/characters/12/522292.jpg" },
-  { id:43, name:"Junpei Yoshino",    jp:"吉野 順平",  faction:"other",   dot:"#777", bg:"linear-gradient(150deg,#1a1000,#0d0800)",
-    grade:"No clasificado", technique:"Moon Dregs", affil:"Mahito (manipulado)",
-    desc:"Estudiante de preparatoria manipulado por Mahito. Tenía una conexión genuina con Yuji antes de su trágico final.",
-    img:"https://cdn.myanimelist.net/images/characters/11/522293.jpg" },
-  { id:44, name:"Nanako Hasaba",     jp:"硲 那奈子",  faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#200028,#100015)",
-    grade:"Desconocido", technique:"Desconocida", affil:"Pseudo-Geto",
-    desc:"Una de las dos seguidoras fanáticas de Geto. Participa en los planes de Pseudo-Geto durante el Culling Game.",
-    img:"https://cdn.myanimelist.net/images/characters/9/522294.jpg" },
-  { id:45, name:"Mimiko Hasaba",     jp:"硲 ミ未子",  faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#200028,#100015)",
-    grade:"Desconocido", technique:"Desconocida", affil:"Pseudo-Geto",
-    desc:"Hermana de Nanako Hasaba y otra seguidora devota de Geto. Actúa junto a su hermana en los planes del antagonista.",
-    img:"https://cdn.myanimelist.net/images/characters/10/522295.jpg" },
-  { id:46, name:"Master Tengen",     jp:"天元",        faction:"other",   dot:"#777", bg:"linear-gradient(150deg,#101a10,#080d08)",
-    grade:"Especial (Inmortal)", technique:"Immortality", affil:"Jujutsu World",
-    desc:"Hechicero inmortal que protege el mundo Jujutsu con sus barreras. Cada 500 años necesita fusionarse con un Vessel.",
-    img:"https://cdn.myanimelist.net/images/characters/13/522296.jpg" },
+  // SIN IMAGEN (emoji fallback)
+  { id:10, name:"Kento Nanami",     jp:"七海 建人",   faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#3a2a00,#1a1200)",  img:null, emoji:"⌚", grade:"Grado 1",               technique:"Ratio Technique",                      affil:"Tokyo Jujutsu High",                desc:"Ex empleado de oficina reconvertido en hechicero de grado 1. Usa la técnica de proporción para identificar puntos débiles." },
+  { id:11, name:"Panda",            jp:"パンダ",      faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#1a1a1a,#0a0a0a)",  img:null, emoji:"🐼", grade:"Semi-Especial",         technique:"Blowup / Gorilla Mode",                affil:"Tokyo Jujutsu High (2do año)",      desc:"Construcción maldita creada por Yaga. Parece un oso panda pero posee tres núcleos y puede cambiar de forma de combate." },
+  { id:12, name:"Aoi Todo",         jp:"東堂 葵",     faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#2a1000,#150800)",  img:null, emoji:"💪", grade:"Grado 1",               technique:"Boogie Woogie",                        affil:"Kyoto Jujutsu High (3er año)",      desc:"El hechicero más fuerte de Kyoto. Su Boogie Woogie intercambia posiciones tocando las palmas. Considera a Yuji su hermano." },
+  { id:13, name:"Mahito",           jp:"真人",        faction:"curse",   dot:"#c0392b", bg:"linear-gradient(150deg,#1a0030,#0a0018)",  img:null, emoji:"🧩", grade:"Especial",              technique:"Idle Transfiguration",                 affil:"Pseudo-Geto",                       desc:"Maldición que encarna el odio humano. Manipula el alma para transmutar cuerpos. Rival directo de Yuji." },
+  { id:14, name:"Jogo",             jp:"漏瑚",        faction:"curse",   dot:"#c0392b", bg:"linear-gradient(150deg,#4a1500,#200a00)",  img:null, emoji:"🌋", grade:"Semi-Especial",         technique:"Disaster Flames",                      affil:"Pseudo-Geto",                       desc:"Maldición volcánica que considera a los humanos los seres anormales. Anhela que las maldiciones dominen el mundo." },
+  { id:15, name:"Hanami",           jp:"花御",        faction:"curse",   dot:"#c0392b", bg:"linear-gradient(150deg,#003a00,#001800)",  img:null, emoji:"🌿", grade:"Semi-Especial",         technique:"Disaster Plants",                      affil:"Pseudo-Geto",                       desc:"Maldición que encarna el miedo humano a la naturaleza. Crea ramas y plantas de energía maldita." },
+  { id:16, name:"Choso",            jp:"脹相",        faction:"other",   dot:"#666",    bg:"linear-gradient(150deg,#3a0000,#1a0000)",  img:null, emoji:"🩸", grade:"Semi-Especial",         technique:"Blood Manipulation",                   affil:"Yuji (hermano)",                    desc:"Semi-maldición, mitad humano. Hermano mayor de Yuji. Domina la manipulación de sangre con precisión letal." },
+  { id:17, name:"Toji Fushiguro",   jp:"伏黒 甚爾",  faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#0a0a0a,#050505)",  img:null, emoji:"🔪", grade:"Ex-Grado Especial",     technique:"Heavenly Restriction",                 affil:"Asesino a sueldo",                  desc:"El Asesino de Hechiceros. Padre de Megumi. La Heavenly Restriction le eliminó la energía maldita a cambio de capacidades físicas sobrehumanas." },
+  { id:18, name:"Kenjaku",          jp:"羂索",        faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#001500,#000a00)",  img:null, emoji:"🧠", grade:"Grado Especial",        technique:"Body Possession / Antigravity System", affil:"Independiente",                     desc:"Hechicero anciano que sobrevive tomando posesión de cuerpos. Orquesta el Culling Game. Actualmente habita el cuerpo de Geto." },
+  { id:19, name:"Mai Zenin",        jp:"禪院 真依",  faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#2a001a,#150010)",  img:null, emoji:"🔫", grade:"Grado 3",               technique:"Construction",                         affil:"Kyoto Jujutsu High",                desc:"Hermana gemela de Maki. A diferencia de ella, tiene energía maldita pero odia el mundo Jujutsu. Usa una pistola imbuida de energía." },
+  { id:20, name:"Kasumi Miwa",      jp:"三輪 霞",    faction:"other",   dot:"#5b9bd5", bg:"linear-gradient(150deg,#001540,#000a20)",  img:null, emoji:"🗡️", grade:"Grado 3",              technique:"New Shadow Style: Simple Domain",      affil:"Kyoto Jujutsu High",                desc:"Hechicera de Kyoto de familia humilde. Usa el estilo Simple Domain con una katana. Una de las más queridas del fandom." },
+  { id:21, name:"Kinji Hakari",     jp:"秤 金次",    faction:"tokyo",   dot:"#e8b84b", bg:"linear-gradient(150deg,#2a1a00,#150d00)",  img:null, emoji:"🎰", grade:"Grado 1",               technique:"Idle Death Gamble",                    affil:"Tokyo Jujutsu High (suspendido)",   desc:"Estudiante suspendido de Tokyo. Su técnica es una ruleta maldita — si saca el jackpot, obtiene energía ilimitada por 4 minutos." },
+  { id:22, name:"Uraume",           jp:"裏梅",        faction:"villain", dot:"#8e44ad", bg:"linear-gradient(150deg,#001535,#000a1a)",  img:null, emoji:"❄️", grade:"Semi-Especial",        technique:"Ice Formation",                        affil:"Sukuna",                            desc:"Leal seguidor de Sukuna desde la antigüedad. Puede congelar y destruir múltiples objetivos simultáneamente." },
+  { id:23, name:"Hiromi Higuruma",  jp:"日車 寛見",  faction:"other",   dot:"#666",    bg:"linear-gradient(150deg,#050520,#020210)",  img:null, emoji:"⚖️", grade:"Grado Especial",       technique:"Deadly Sentencing",                    affil:"Culling Game",                      desc:"Ex abogado convertido en hechicero. Su dominio Deadly Sentencing juzga al oponente y puede confiscarle la técnica maldita." },
+  { id:24, name:"Hajime Kashimo",   jp:"鹿紫雲 一",  faction:"other",   dot:"#666",    bg:"linear-gradient(150deg,#1a1a00,#0d0d00)",  img:null, emoji:"⚡", grade:"Especial",              technique:"Genju Kashimo",                        affil:"Culling Game",                      desc:"Hechicero legendario reencarnado de hace 400 años. Participó en el Culling Game buscando a Sukuna." },
+  { id:25, name:"Junpei Yoshino",   jp:"吉野 順平",  faction:"other",   dot:"#666",    bg:"linear-gradient(150deg,#1a1000,#0d0800)",  img:null, emoji:"🎭", grade:"No clasificado",        technique:"Moon Dregs",                           affil:"Manipulado por Mahito",             desc:"Estudiante manipulado por Mahito. Tenía una conexión genuina con Yuji antes de su trágico final." },
 ];
 
 let selectedId = null;
@@ -335,27 +161,23 @@ let searchQuery = '';
 function getFiltered() {
   return C.filter(c => {
     const fm = currentFilter === 'all' || c.faction === currentFilter;
-    const sm = !searchQuery || c.name.toLowerCase().includes(searchQuery.toLowerCase()) || c.jp.includes(searchQuery);
+    const sm = !searchQuery || c.name.toLowerCase().includes(searchQuery.toLowerCase());
     return fm && sm;
   });
 }
 
-function dotColor(faction) {
-  return { tokyo:'#e8b84b', kyoto:'#5b9bd5', curse:'#c0392b', villain:'#8e44ad', other:'#666' }[faction] || '#666';
-}
-
-function factionLabel(faction) {
-  return { tokyo:'Tokyo', kyoto:'Kyoto', curse:'Maldición', villain:'Villano', other:'Otro' }[faction] || '';
+function factionLabel(f) {
+  return {tokyo:'Tokyo',curse:'Maldición',villain:'Villano',other:'Otro'}[f]||'';
 }
 
 function renderGrid() {
   const grid = document.getElementById('grid');
   const filtered = getFiltered();
-  document.getElementById('countLabel').textContent = `${filtered.length} personaje${filtered.length !== 1 ? 's' : ''}`;
+  document.getElementById('countLabel').textContent = `${filtered.length} personaje${filtered.length!==1?'s':''}`;
   grid.innerHTML = '';
 
   if (!filtered.length) {
-    grid.innerHTML = '<div class="no-results" style="grid-column:1/-1">No se encontraron personajes 🔍</div>';
+    grid.innerHTML = '<div class="no-results">No se encontraron personajes 🔍</div>';
     return;
   }
 
@@ -363,7 +185,7 @@ function renderGrid() {
     const isSel = c.id === selectedId;
     const isDim = selectedId && !isSel;
     const card = document.createElement('div');
-    card.className = 'card' + (isSel ? ' selected' : '') + (isDim ? ' dimmed' : '');
+    card.className = 'card'+(isSel?' selected':'')+(isDim?' dimmed':'');
     card.style.background = c.bg;
 
     const dot = document.createElement('div');
@@ -374,12 +196,17 @@ function renderGrid() {
     const imgWrap = document.createElement('div');
     imgWrap.className = 'card-img';
     imgWrap.style.background = c.bg;
-    const img = document.createElement('img');
-    img.src = c.img;
-    img.alt = c.name;
-    img.loading = 'lazy';
-    img.onerror = () => { imgWrap.innerHTML = `<div class="placeholder" style="background:${c.bg}">👤</div>`; };
-    imgWrap.appendChild(img);
+
+    if (c.img) {
+      const img = document.createElement('img');
+      img.src = BASE + c.img;
+      img.alt = c.name;
+      img.loading = 'lazy';
+      img.onerror = () => { imgWrap.innerHTML = `<div class="placeholder" style="background:${c.bg}">${c.emoji||'👤'}</div>`; };
+      imgWrap.appendChild(img);
+    } else {
+      imgWrap.innerHTML = `<div class="placeholder" style="background:${c.bg}">${c.emoji||'👤'}</div>`;
+    }
 
     const ov = document.createElement('div');
     ov.className = 'card-overlay';
@@ -407,24 +234,25 @@ function handleClick(id) {
     showDetail(id);
   }
   renderGrid();
-  if (selectedId) setTimeout(() => document.getElementById('detail').scrollIntoView({ behavior:'smooth', block:'nearest' }), 80);
+  if (selectedId) setTimeout(() => document.getElementById('detail').scrollIntoView({behavior:'smooth',block:'nearest'}), 80);
 }
 
 function showDetail(id) {
   const c = C.find(x => x.id === id);
   if (!c) return;
-
   document.getElementById('detailBar').style.background = c.bg;
-
   const di = document.getElementById('detailImg');
   di.style.background = c.bg;
-  const img = document.createElement('img');
-  img.src = c.img;
-  img.alt = c.name;
-  img.onerror = () => { di.innerHTML = `<div style="display:flex;align-items:center;justify-content:height:100%;font-size:2.5rem;padding:20px">👤</div>`; };
-  di.innerHTML = '';
-  di.appendChild(img);
-
+  if (c.img) {
+    const img = document.createElement('img');
+    img.src = BASE + c.img;
+    img.alt = c.name;
+    img.onerror = () => { di.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2.5rem">${c.emoji||'👤'}</div>`; };
+    di.innerHTML = '';
+    di.appendChild(img);
+  } else {
+    di.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2.5rem">${c.emoji||'👤'}</div>`;
+  }
   document.getElementById('detailName').textContent = c.name;
   document.getElementById('detailSub').textContent = c.jp + ' · ' + factionLabel(c.faction);
   document.getElementById('detailDesc').textContent = c.desc;
